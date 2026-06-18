@@ -83,93 +83,164 @@
         .breadcrumb a { color: var(--primary); text-decoration: none; }
         .breadcrumb span { color: var(--text-light); margin: 0 0.5rem; }
 
-        .page-content { padding: 4rem 0; max-width: 900px; margin: 0 auto; }
+        .page-content { padding: 4rem 0; }
 
         .page-title { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; text-align: center; }
         .page-subtitle { text-align: center; font-size: 1.1rem; color: var(--text-light); margin-bottom: 3rem; }
 
+        /* Steps Grid */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
         .step-card {
             background: var(--bg-alt);
             border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 1.5rem;
             border: 1px solid var(--border);
         }
 
-        .step-card .step-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        .step-card .step-number {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
-        .step-header h2 {
-            color: var(--primary);
-            font-size: 1.5rem;
+        .step-card h3 {
+            font-size: 1.15rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            line-height: 1.4;
         }
 
         .step-card p, .step-card li {
             color: var(--text-light);
-            line-height: 1.8;
+            font-size: 0.95rem;
+            line-height: 1.7;
             margin-bottom: 0.75rem;
         }
 
         .step-card ul {
-            margin-left: 1.5rem;
+            margin-left: 1.25rem;
             margin-bottom: 1rem;
         }
 
         .step-card li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.6rem;
         }
 
-        .requirements-list {
-            background: white;
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
+        .step-card li strong {
+            color: var(--text);
         }
 
-        .requirements-list h3 {
+        /* Income Table */
+        .income-section {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        .income-section h3 {
             color: var(--primary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
-        .requirements-list ul {
-            margin-left: 1.25rem;
+        .income-section p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
         }
 
-        .highlight-box {
+        .income-table {
+            width: 100%;
+            border-collapse: collapse;
             background: white;
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        .highlight-box h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
+        .income-table th {
+            background: #e0e0e0;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .income-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .income-table tr:last-child td { border-bottom: none; }
+        .income-table tr:nth-child(even) { background: var(--bg-alt); }
+
+        .income-placeholder {
+            background: white;
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .income-placeholder p {
+            margin-bottom: 1rem;
+        }
+
+        .step-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-step {
+            display: inline-block;
+            padding: 0.6rem 1.25rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .btn-step-primary {
+            background: #5bc0de;
+            color: white;
+        }
+
+        .btn-step-primary:hover {
+            background: #46b8da;
+        }
+
+        .btn-step-secondary {
+            background: transparent;
+            color: #5bc0de;
+            border: 2px solid #5bc0de;
+        }
+
+        .btn-step-secondary:hover {
+            background: #5bc0de;
+            color: white;
         }
 
         .contact-prompt {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
         }
 
         .contact-prompt h2 {
@@ -182,6 +253,8 @@
             margin-bottom: 1.5rem;
         }
 
+        .placeholder { color: var(--text-light); font-style: italic; }
+
         footer {
             background: #1a1a1a;
             color: white;
@@ -193,11 +266,17 @@
         .social-links a { color: white; text-decoration: none; font-size: 1.2rem; }
         .social-links a:hover { color: var(--accent); }
 
-        .placeholder { color: var(--text-light); font-style: italic; }
+        /* Mobile */
+        @media (max-width: 900px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
         @media (max-width: 768px) {
             .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
             .page-title { font-size: 1.75rem; }
+            .income-table th, .income-table td { padding: 0.5rem; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -228,71 +307,65 @@
             <h1 class="page-title">Eligibility & Fees</h1>
             <p class="page-subtitle">Three simple steps to join Stone Soup Fresno.</p>
 
-            <!-- Step 1 -->
-            <div class="step-card">
-                <div class="step-header">
-                    <div class="step-number">1</div>
-                    <h2>See if your family meets program requirements.</h2>
+            <!-- Steps Grid -->
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <span class="step-number">Step 1</span>
+                    <h3>See if your family meets household income requirements.</h3>
+
+                    <p>Stone Soup Fresno is a community benefit organization providing preschool, playgroup, and cultural education programs. <strong>Most of our families pay minimal or no fees.</strong> We offer scholarships and financial assistance to qualifying families.</p>
+
+                    <div class="income-section">
+                        <div class="income-placeholder">
+                            <p><strong>Income Guidelines</strong></p>
+                            <p>Contact us for current household income requirements.</p>
+                            <p style="font-size: 0.85rem;">We use sliding scale tuition based on family size and income.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <p>Stone Soup Fresno is a community benefit organization providing preschool, playgroup, and cultural education programs. <strong>Most of our families pay minimal or no fees.</strong> We offer scholarships and financial assistance to qualifying families.</p>
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <span class="step-number">Step 2</span>
+                    <h3>Make sure your child is ready to join the Stone Soup Fresno family.</h3>
 
-                <p>We offer sliding scale tuition based on family income and size. To learn about specific income requirements, please contact us directly.</p>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="step-card">
-                <div class="step-header">
-                    <div class="step-number">2</div>
-                    <h2>Make sure your child is ready to join the Stone Soup Fresno family.</h2>
-                </div>
-
-                <div class="requirements-list">
-                    <h3>Program Eligibility</h3>
+                    <p><strong>Your child must be:</strong></p>
                     <ul>
-                        <li><strong>Preschool:</strong> Ages 3-5 years old</li>
-                        <li><strong>Playgroup:</strong> Ages 2-5 years old</li>
-                        <li><strong>Learn Hmong:</strong> Open to all ages and families</li>
+                        <li>Preschool: 3-5 years old</li>
+                        <li>Playgroup: 2-5 years old</li>
+                        <li>Learn Hmong: All ages welcome</li>
                     </ul>
-                </div>
 
-                <p><strong>Ready to apply?</strong> You will need:</p>
-                <ul>
-                    <li>Current physical (most programs require this)</li>
-                    <li>Updated immunization records</li>
-                    <li>Birth certificate or passport for your child</li>
-                    <li>Proof of residency</li>
-                    <li>Income verification (for sliding scale tuition)</li>
-                </ul>
-
-                <p class="placeholder">Other requirements may apply. Contact us for a complete list of required documents for your specific program.</p>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-card">
-                <div class="step-header">
-                    <div class="step-number">3</div>
-                    <h2>Get in touch!</h2>
-                </div>
-
-                <p><strong>We are here to help.</strong> Reach out to learn about eligibility, schedule a tour, or request an application packet.</p>
-
-                <div class="highlight-box">
-                    <h3>How to Apply</h3>
+                    <p><strong>Ready to apply? You will need:</strong></p>
                     <ul>
-                        <li><strong>Step 1:</strong> Contact us by phone or email to express interest</li>
-                        <li><strong>Step 2:</strong> Schedule a tour of our facility</li>
-                        <li><strong>Step 3:</strong> Request and complete an application packet</li>
-                        <li><strong>Step 4:</strong> Submit application and required documents in person</li>
+                        <li>Current physical</li>
+                        <li>Updated immunization records</li>
+                        <li>Birth certificate or passport</li>
+                        <li>Income verification</li>
                     </ul>
+
+                    <p class="placeholder" style="font-size: 0.85rem;">Contact us for a complete list of required documents.</p>
                 </div>
 
-                <p>Please note that <strong>we do not accept enrollment applications through this website.</strong> You must request an application in person or by contacting us directly.</p>
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <span class="step-number">Step 3</span>
+                    <h3>Get in touch!</h3>
+
+                    <p><strong>We are here to help.</strong> Reach out to learn about eligibility, schedule a tour, or request an application packet.</p>
+
+                    <div class="step-buttons">
+                        <a href="contact.html" class="btn-step btn-step-primary">Contact Us</a>
+                        <a href="https://www.facebook.com/stonesoupfresno/" target="_blank" class="btn-step btn-step-secondary">Facebook Page</a>
+                    </div>
+                </div>
             </div>
 
+            <!-- Contact Prompt -->
             <div class="contact-prompt">
                 <h2>Ready to Get Started?</h2>
-                <p>Contact us today to schedule a tour and request an application.</p>
+                <p>Please note that <strong>we do not accept enrollment applications through this website.</strong> You must request an application in person or by contacting us directly.</p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="contact.html" class="btn btn-primary">Contact Us</a>
                     <a href="#" class="btn btn-secondary">Donate</a>
