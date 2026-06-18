@@ -259,7 +259,7 @@
 
         .placeholder { color: var(--text-light); font-style: italic; }
 
-        /* Advanced Footer */
+        /* Footer */
         .site-footer {
             background: #1a3c1b;
             color: rgba(255,255,255,0.85);
@@ -273,11 +273,11 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            text-align: left;
         }
 
         .footer-info {
             flex: 1;
+            text-align: left;
         }
 
         .footer-info h3 {
@@ -288,29 +288,29 @@
         }
 
         .footer-contact {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .footer-contact h4 {
             color: white;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
         }
 
         .footer-contact p {
-            margin-bottom: 0.2rem;
+            margin: 0 0 0.2rem 0;
             font-size: 0.9rem;
         }
 
         .footer-links {
-            flex: 0 0 200px;
+            flex: 0 0 140px;
             text-align: left;
         }
 
         .footer-links h4 {
-            color: rgba(255,255,255,0.65);
-            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 1.05rem;
             margin-bottom: 1rem;
             font-weight: 400;
         }
@@ -323,13 +323,13 @@
 
         .footer-links li {
             margin-bottom: 0.5rem;
+            padding: 0;
         }
 
         .footer-links a {
             color: rgba(255,255,255,0.85);
             text-decoration: underline;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            font-size: 0.9rem;
         }
 
         .footer-links a:hover {
@@ -338,15 +338,12 @@
 
         .footer-bottom {
             background: rgba(0,0,0,0.2);
-            padding: 1.25rem 0;
+            padding: 1rem 0;
             text-align: center;
         }
 
         .footer-bottom .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
+            display: block;
         }
 
         .footer-bottom p {
@@ -356,16 +353,14 @@
         }
 
         .footer-bottom .social-links {
-            display: flex;
-            gap: 0.75rem;
-            margin: 0;
+            display: inline-block;
+            margin: 0.5rem 0 0 0;
         }
 
         .footer-bottom .social-links a {
             color: rgba(255,255,255,0.8);
             text-decoration: none;
             font-size: 0.9rem;
-            transition: color 0.3s;
         }
 
         .footer-bottom .social-links a:hover {
@@ -376,19 +371,6 @@
 
         @media (max-width: 768px) {
             .footer-grid { flex-direction: column; gap: 2rem; }
-        }
-
-        /* Mobile */
-        @media (max-width: 900px) {
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
-            .page-title { font-size: 1.75rem; }
-            .income-table th, .income-table td { padding: 0.5rem; font-size: 0.85rem; }
         }
     </style>
 </head>
