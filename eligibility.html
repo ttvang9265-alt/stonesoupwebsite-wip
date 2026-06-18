@@ -15,9 +15,6 @@
             --bg-alt: #f8f9fa;
             --border: #e0e0e0;
             --secondary: #6c757d;
-            --alert: #856404;
-            --alert-bg: #fff3cd;
-            --alert-border: #ffeaa7;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -91,7 +88,7 @@
         .page-title { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; text-align: center; }
         .page-subtitle { text-align: center; font-size: 1.1rem; color: var(--text-light); margin-bottom: 3rem; }
 
-        .info-card {
+        .step-card {
             background: var(--bg-alt);
             border-radius: 12px;
             padding: 2rem;
@@ -99,11 +96,63 @@
             border: 1px solid var(--border);
         }
 
-        .info-card h2 { color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem; }
-        .info-card h3 { color: var(--primary); margin: 1.5rem 0 0.75rem; }
-        .info-card p, .info-card li { color: var(--text-light); line-height: 1.8; margin-bottom: 0.75rem; }
-        .info-card ul, .info-card ol { margin-left: 1.5rem; margin-bottom: 1rem; }
-        .info-card li { margin-bottom: 0.75rem; }
+        .step-card .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .step-header h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .step-card p, .step-card li {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-card ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-card li {
+            margin-bottom: 0.75rem;
+        }
+
+        .requirements-list {
+            background: white;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .requirements-list h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .requirements-list ul {
+            margin-left: 1.25rem;
+        }
 
         .highlight-box {
             background: white;
@@ -113,47 +162,38 @@
             border-radius: 0 8px 8px 0;
         }
 
-        .highlight-box h3, .highlight-box h4 { color: var(--primary); margin-bottom: 0.75rem; margin-top: 0; }
-
-        .alert-box {
-            background: var(--alert-bg);
-            border: 1px solid var(--alert-border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            color: var(--alert);
+        .highlight-box h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
         }
-
-        .alert-box h3 { color: var(--alert); margin-bottom: 0.75rem; }
-        .alert-box p, .alert-box li { color: var(--alert); margin-bottom: 0.5rem; }
-        .alert-box strong { color: var(--alert); }
-        .alert-box ul { margin-left: 1.5rem; margin-top: 0.5rem; }
-
-        .steps { counter-reset: step; }
-
-        .step { display: flex; gap: 1rem; margin-bottom: 1.5rem; padding: 1rem; background: white; border-radius: 8px; }
-        .step-number {
-            width: 40px; height: 40px; background: var(--primary); color: white;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-weight: 700; flex-shrink: 0;
-        }
-        .step-content h4 { color: var(--primary); margin-bottom: 0.5rem; }
-        .step-content p { margin-bottom: 0; }
 
         .contact-prompt {
-            text-align: center; margin-top: 3rem;
+            text-align: center;
+            margin-top: 3rem;
         }
 
-        .contact-prompt h2 { color: var(--primary); margin-bottom: 1rem; }
-        .contact-prompt p { color: var(--text-light); margin-bottom: 1.5rem; }
+        .contact-prompt h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-prompt p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
 
         footer {
-            background: #1a1a1a; color: white; padding: 2rem 0; text-align: center;
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
         }
 
         .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
         .social-links a { color: white; text-decoration: none; font-size: 1.2rem; }
         .social-links a:hover { color: var(--accent); }
+
+        .placeholder { color: var(--text-light); font-style: italic; }
 
         @media (max-width: 768px) {
             .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
@@ -186,96 +226,68 @@
     <section class="page-content">
         <div class="container">
             <h1 class="page-title">Eligibility & Fees</h1>
-            <p class="page-subtitle">Learn about enrollment requirements and financial assistance options.</p>
+            <p class="page-subtitle">Three simple steps to join Stone Soup Fresno.</p>
 
-            <div class="info-card">
-                <h2>🎯 Eligibility Information</h2>
-                <p>Stone Soup Fresno serves families in the Fresno community. To learn about specific eligibility requirements for each program, please contact us directly.</p>
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h2>See if your family meets program requirements.</h2>
+                </div>
 
-                <div class="highlight-box">
-                    <h3>Programs Available</h3>
+                <p>Stone Soup Fresno is a community benefit organization providing preschool, playgroup, and cultural education programs. <strong>Most of our families pay minimal or no fees.</strong> We offer scholarships and financial assistance to qualifying families.</p>
+
+                <p>We offer sliding scale tuition based on family income and size. To learn about specific income requirements, please contact us directly.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h2>Make sure your child is ready to join the Stone Soup Fresno family.</h2>
+                </div>
+
+                <div class="requirements-list">
+                    <h3>Program Eligibility</h3>
                     <ul>
-                        <li><strong>Preschool:</strong> Early education program for young children</li>
-                        <li><strong>Playgroup:</strong> Play-based learning experiences</li>
-                        <li><strong>Learn Hmong:</strong> Cultural and language programs</li>
+                        <li><strong>Preschool:</strong> Ages 3-5 years old</li>
+                        <li><strong>Playgroup:</strong> Ages 2-5 years old</li>
+                        <li><strong>Learn Hmong:</strong> Open to all ages and families</li>
                     </ul>
                 </div>
 
-                <h3>Required Information</h3>
-                <p>When you contact us about enrollment, we will provide you with a complete list of required documentation. Generally, you will need to provide:</p>
-                <ol>
-                    <li>Completed enrollment application form</li>
-                    <li>Proof of child's age (birth certificate or passport)</li>
-                    <li>Up-to-date immunization records</li>
+                <p><strong>Ready to apply?</strong> You will need:</p>
+                <ul>
+                    <li>Current physical (most programs require this)</li>
+                    <li>Updated immunization records</li>
+                    <li>Birth certificate or passport for your child</li>
                     <li>Proof of residency</li>
-                    <li>Any additional documents as requested</li>
-                </ol>
+                    <li>Income verification (for sliding scale tuition)</li>
+                </ul>
+
+                <p class="placeholder">Other requirements may apply. Contact us for a complete list of required documents for your specific program.</p>
             </div>
 
-            <div class="info-card">
-                <h2>💰 Tuition & Financial Assistance</h2>
-                <p>We believe quality early education should be accessible to all families. We offer sliding scale tuition and financial assistance based on family income and size.</p>
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h2>Get in touch!</h2>
+                </div>
+
+                <p><strong>We are here to help.</strong> Reach out to learn about eligibility, schedule a tour, or request an application packet.</p>
 
                 <div class="highlight-box">
-                    <h3>Financial Assistance Available</h3>
-                    <p>Stone Soup Fresno offers scholarships and financial assistance to qualifying families. We accept various subsidy programs and work with families to ensure our programs are accessible.</p>
+                    <h3>How to Apply</h3>
+                    <ul>
+                        <li><strong>Step 1:</strong> Contact us by phone or email to express interest</li>
+                        <li><strong>Step 2:</strong> Schedule a tour of our facility</li>
+                        <li><strong>Step 3:</strong> Request and complete an application packet</li>
+                        <li><strong>Step 4:</strong> Submit application and required documents in person</li>
+                    </ul>
                 </div>
 
-                <h3>Payment Options</h3>
-                <ul>
-                    <li>Sliding scale tuition based on income</li>
-                    <li>Scholarships for qualifying families</li>
-                    <li>Flexible payment plans</li>
-                    <li>Acceptance of childcare subsidies</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h2>📝 How to Apply</h2>
-                <p>To begin the enrollment process, please follow these steps:</p>
-
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Contact Us</h4>
-                            <p>Reach out by phone or email to express interest and request enrollment information.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Schedule a Tour</h4>
-                            <p>Visit our facility to meet our team and see our programs in action.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Complete Application</h4>
-                            <p>Fill out the provided application form and gather required documents.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Submit Documents</h4>
-                            <p>Return your completed application and documents as instructed by our staff.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="alert-box">
-                <h3>⚠️ Important Notice</h3>
-                <p><strong>We do not accept enrollment applications through this website.</strong></p>
-                <p>To request an application or for more information about our programs, please:</p>
-                <ul>
-                    <li>Call us during business hours</li>
-                    <li>Email us</li>
-                    <li>Visit our facility in person</li>
-                    <li>Message us through Facebook</li>
-                </ul>
+                <p>Please note that <strong>we do not accept enrollment applications through this website.</strong> You must request an application in person or by contacting us directly.</p>
             </div>
 
             <div class="contact-prompt">
