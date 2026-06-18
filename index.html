@@ -52,10 +52,21 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
-            text-decoration: none;
         }
 
         .nav-links {
@@ -666,7 +677,10 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">Stone Soup Fresno</a>
+                <a href="index.html" class="logo">
+                    <img src="logo.jpg" alt="Stone Soup Fresno Logo">
+                    <span class="logo-text">Stone Soup Fresno</span>
+                </a>
                 <ul class="nav-links">
                     <li><a href="about.html">About</a></li>
                     <li><a href="eligibility.html">Eligibility & Fees</a></li>
