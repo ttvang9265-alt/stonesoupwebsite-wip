@@ -88,28 +88,10 @@
             color: white;
         }
 
-        .btn-primary:hover {
-            background: var(--primary-light);
-        }
-
-        .btn-secondary {
-            background: var(--secondary);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: #5a6268;
-        }
-
         .btn-outline {
             background: transparent;
             color: var(--primary);
             border: 2px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
         }
 
         .breadcrumb {
@@ -118,34 +100,13 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .breadcrumb a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .breadcrumb span {
-            color: var(--text-light);
-            margin: 0 0.5rem;
-        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb span { color: var(--text-light); margin: 0 0.5rem; }
 
         .page-content {
             padding: 4rem 0;
             max-width: 900px;
             margin: 0 auto;
-        }
-
-        .page-title {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .page-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 3rem;
         }
 
         .careers-hero {
@@ -155,177 +116,33 @@
             text-align: center;
         }
 
-        .careers-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+        .careers-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .careers-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
 
-        .careers-hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .why-work {
+        .info-card {
             background: var(--bg-alt);
-            padding: 4rem 0;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .benefit-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .benefit-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .benefit-card p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 0;
-        }
-
-        .job-card {
-            background: white;
-            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 2rem;
-            margin-bottom: 1.5rem;
-            transition: box-shadow 0.3s;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
         }
 
-        .job-card:hover {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
+        .info-card h2 { color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem; }
+        .info-card p { color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
+        .info-card ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .info-card li { margin-bottom: 0.75rem; color: var(--text-light); }
 
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .job-title {
-            font-size: 1.35rem;
-            color: var(--primary);
-            margin: 0;
-        }
-
-        .job-type {
-            background: var(--bg-alt);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .job-meta {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .job-meta-item {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .job-description {
-            color: var(--text);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .job-section h4 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-        }
-
-        .job-section ul {
-            margin-left: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .job-section li {
-            margin-bottom: 0.5rem;
-        }
-
-        .job-footer {
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .job-salary {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .no-jobs {
-            text-align: center;
-            padding: 3rem;
-            background: var(--bg-alt);
-            border-radius: 12px;
-        }
-
-        .no-jobs-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .no-jobs h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .how-to-apply {
+        .contact-prompt {
             background: var(--primary);
             color: white;
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 12px;
             margin: 3rem 0;
             text-align: center;
         }
 
-        .how-to-apply h2 {
-            margin-bottom: 1rem;
-        }
-
-        .how-to-apply p {
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
+        .contact-prompt h2 { margin-bottom: 1rem; }
+        .contact-prompt p { margin-bottom: 1.5rem; opacity: 0.9; }
 
         footer {
             background: #1a1a1a;
@@ -334,36 +151,13 @@
             text-align: center;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-        }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.2rem; }
+        .social-links a:hover { color: var(--accent); }
 
         @media (max-width: 768px) {
-            .nav-links li:not(:last-child):not(:nth-last-child(2)) {
-                display: none;
-            }
-
-            .job-header {
-                flex-direction: column;
-            }
-
-            .job-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
+            .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
+            .careers-hero h1 { font-size: 1.75rem; }
         }
     </style>
 </head>
@@ -384,201 +178,46 @@
         </div>
     </header>
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
             <a href="index.html">Home</a> <span>/</span> Careers
         </div>
     </div>
 
-    <!-- Careers Hero -->
     <section class="careers-hero">
         <div class="container">
             <h1>Join Our Team</h1>
-            <p>Make a difference in the lives of children and families in the Fresno community. We're looking for passionate, dedicated individuals to join our mission.</p>
+            <p>Make a difference in the lives of children and families in the Fresno community.</p>
         </div>
     </section>
 
-    <!-- Why Work With Us -->
-    <section class="why-work">
-        <div class="container">
-            <h2 style="text-align: center; color: var(--primary); margin-bottom: 0.5rem;">Why Work at Stone Soup?</h2>
-            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">We offer a supportive, inclusive workplace where you can grow professionally while making a real impact.</p>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🌱</div>
-                    <h3>Professional Growth</h3>
-                    <p>Ongoing training, professional development, and opportunities for advancement.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">💚</div>
-                    <h3>Meaningful Work</h3>
-                    <p>Make a real difference in the lives of children and families every day.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🤝</div>
-                    <h3>Supportive Team</h3>
-                    <p>Work with passionate, caring professionals who support one another.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">⚖️</div>
-                    <h3>Work-Life Balance</h3>
-                    <p>Flexible scheduling and paid time off to recharge and spend time with family.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Open Positions -->
     <section class="page-content">
         <div class="container">
-            <h2 style="text-align: center; color: var(--primary); margin-bottom: 3rem;">Current Openings</h2>
-
-            <!-- Job 1: Preschool Teacher -->
-            <div class="job-card">
-                <div class="job-header">
-                    <h3 class="job-title">Preschool Teacher</h3>
-                    <span class="job-type">Full-Time</span>
-                </div>
-                <div class="job-meta">
-                    <div class="job-meta-item">📍 Fresno, CA</div>
-                    <div class="job-meta-item">💼 Education</div>
-                    <div class="job-meta-item">📅 Immediate Opening</div>
-                </div>
-                <p class="job-description">We are seeking a creative, nurturing, and dedicated Preschool Teacher to join our team. The ideal candidate will implement developmentally appropriate curriculum, create a safe and engaging learning environment, and partner with families to support each child's growth.</p>
-                <div class="job-section">
-                    <h4>Responsibilities</h4>
-                    <ul>
-                        <li>Plan and implement age-appropriate curriculum aligned with California Early Learning Standards</li>
-                        <li>Create a warm, inclusive classroom environment</li>
-                        <li>Assess and document children's developmental progress</li>
-                        <li>Communicate regularly with families about their child's progress</li>
-                        <li>Supervise classroom assistants and volunteers</li>
-                        <li>Maintain a safe, clean, and organized classroom</li>
-                    </ul>
-                </div>
-                <div class="job-section">
-                    <h4>Qualifications</h4>
-                    <ul>
-                        <li>Associate's or Bachelor's degree in Early Childhood Education (ECE) or related field</li>
-                        <li>12+ ECE units required; 24+ units preferred</li>
-                        <li>Minimum 1 year experience working with preschool-aged children</li>
-                        <li>Current CPR/First Aid certification (or willingness to obtain)</li>
-                        <li>Clear background check and TB test</li>
-                        <li>Bilingual (English/Hmong) preferred but not required</li>
-                    </ul>
-                </div>
-                <div class="job-footer">
-                    <span class="job-salary">$18 - $24/hour (based on experience & education)</span>
-                    <a href="contact.html" class="btn btn-primary">Apply Now</a>
-                </div>
+            <div class="info-card">
+                <h2>Work With Us</h2>
+                <p>Stone Soup Fresno is always interested in connecting with passionate individuals who want to make a difference in our community. We are a community benefit organization dedicated to inspiring children and nurturing families.</p>
+                <p>We believe in creating a supportive, inclusive workplace where team members can grow professionally while contributing to our mission. If you are interested in early childhood education, community support, or nonprofit work, we want to hear from you.</p>
             </div>
 
-            <!-- Job 2: Teacher Assistant -->
-            <div class="job-card">
-                <div class="job-header">
-                    <h3 class="job-title">Teacher Assistant / Aide</h3>
-                    <span class="job-type">Part-Time</span>
-                </div>
-                <div class="job-meta">
-                    <div class="job-meta-item">📍 Fresno, CA</div>
-                    <div class="job-meta-item">💼 Education</div>
-                    <div class="job-meta-item">📅 Immediate Opening</span></div>
-                </div>
-                <p class="job-description">We're looking for enthusiastic Teacher Assistants to support our lead teachers in providing high-quality early education. This is a great entry-level opportunity for those interested in pursuing a career in early childhood education.</p>
-                <div class="job-section">
-                    <h4>Responsibilities</h4>
-                    <ul>
-                        <li>Assist lead teacher with daily activities and classroom management</li>
-                        <li>Supervise children during play, meals, and transitions</li>
-                        <li>Prepare materials and set up learning centers</li>
-                        <li>Help maintain a clean and safe classroom environment</li>
-                        <li>Support children with personal care needs as required</li>
-                    </ul>
-                </div>
-                <div class="job-section">
-                    <h4>Qualifications</h4>
-                    <ul>
-                        <li>High school diploma or equivalent required</li>
-                        <li>6+ ECE units preferred</li>
-                        <li>Previous experience working with young children preferred</li>
-                        <li>Current CPR/First Aid certification (or willingness to obtain)</li>
-                        <li>Clear background check and TB test</li>
-                    </ul>
-                </div>
-                <div class="job-footer">
-                    <span class="job-salary">$15 - $18/hour</span>
-                    <a href="contact.html" class="btn btn-primary">Apply Now</a>
-                </div>
-            </div>
-
-            <!-- Job 3: IT Technician -->
-            <div class="job-card">
-                <div class="job-header">
-                    <h3 class="job-title">IT Support Technician</h3>
-                    <span class="job-type">Full-Time</span>
-                </div>
-                <div class="job-meta">
-                    <div class="job-meta-item">📍 Fresno, CA</div>
-                    <div class="job-meta-item">💼 Technology</span></div>
-                    <div class="job-meta-item">📅 Open Until Filled</span></div>
-                </div>
-                <p class="job-description">Stone Soup Fresno is seeking an IT Support Technician to maintain and support our technology infrastructure. The ideal candidate will have experience with Windows systems, network administration, and security systems.</p>
-                <div class="job-section">
-                    <h4>Responsibilities</h4>
-                    <ul>
-                        <li>Administer Genetec Security Center video surveillance and access control systems</li>
-                        <li>Manage Active Directory, group policies, and Office 365 accounts</li>
-                        <li>Troubleshoot hardware, software, and network issues</li>
-                        <li>Install and configure security cameras, cabling, and network infrastructure</li>
-                        <li>Deploy endpoint protection and anti-malware solutions</li>
-                        <li>Provide technical support to staff and volunteers</li>
-                    </ul>
-                </div>
-                <div class="job-section">
-                    <h4>Qualifications</h4>
-                    <ul>
-                        <li>Associate's degree in Information Technology, Computer Science, or related field</li>
-                        <li>1+ years experience in IT support or system administration</li>
-                        <li>Experience with Windows Server, Active Directory, and Office 365</li>
-                        <li>Knowledge of security systems (Genetec preferred) and IP cameras</li>
-                        <li>Experience with CAT6/CAT7 cabling and network infrastructure</li>
-                        <li>Strong problem-solving and communication skills</li>
-                    </ul>
-                </div>
-                <div class="job-footer">
-                    <span class="job-salary">$20 - $28/hour (based on experience)</span>
-                    <a href="contact.html" class="btn btn-primary">Apply Now</a>
-                </div>
-            </div>
-
-            <!-- How to Apply -->
-            <div class="how-to-apply">
-                <h2>How to Apply</h2>
-                <p>Interested in joining our team? We'd love to hear from you! Please send your resume and cover letter to:</p>
-                <div style="font-size: 1.2rem; margin-bottom: 1.5rem;">
-                    <strong>Email:</strong> careers@stonesoupfresno.org<br>
-                    <strong>Subject:</strong> [Position Name] - [Your Name]
-                </div>
-                <p>Please include:</p>
-                <ul style="text-align: left; max-width: 500px; margin: 1rem auto;">
-                    <li>Your resume</li>
-                    <li>A cover letter explaining why you want to work at Stone Soup</li>
-                    <li>Any relevant certifications or transcripts</li>
+            <div class="info-card">
+                <h2>Why Stone Soup?</h2>
+                <ul>
+                    <li>Be part of a mission-driven organization</li>
+                    <li>Support children and families in the Fresno community</li>
+                    <li>Work in a collaborative, team-oriented environment</li>
+                    <li>Professional development and growth opportunities</li>
+                    <li>Make a meaningful impact every day</li>
                 </ul>
-                <a href="contact.html" class="btn btn-white">Contact Us</a>
             </div>
 
-            <!-- No Other Openings Note -->
-            <div class="no-jobs">
-                <div class="no-jobs-icon">📬</div>
-                <h3>Don't see the right fit?</h3>
-                <p>We're always interested in meeting passionate individuals who want to make a difference. Send us your resume and we'll keep it on file for future openings.</p>
+            <div class="contact-prompt">
+                <h2>Interested in Joining Our Team?</h2>
+                <p>Please reach out to learn more about current opportunities and how to apply.</p>
+                <a href="contact.html" class="btn btn-white">Contact Us</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="social-links">
