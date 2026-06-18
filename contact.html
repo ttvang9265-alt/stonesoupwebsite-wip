@@ -39,10 +39,16 @@
         nav { display: flex; justify-content: space-between; align-items: center; }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
+            display: flex;
+            align-items: center;
             text-decoration: none;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
         }
 
         .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
