@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Stone Soup Fresno</title>
+    <style>
+        :root {
+            --primary: #2c5f2d;
+            --primary-light: #4a8b4b;
+            --accent: #97bc62;
+            --text: #333333;
+            --text-light: #666666;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e0e0e0;
+            --secondary: #6c757d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .breadcrumb {
+            background: var(--bg-alt);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+            margin: 0 0.5rem;
+        }
+
+        .page-content {
+            padding: 4rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .info-card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .info-card p, .info-card li {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-card ul, .info-card ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-card li {
+            margin-bottom: 0.75rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        .program-detail {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .program-detail h3 {
+            color: var(--primary);
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .program-detail p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .program-meta {
+            display: flex;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .program-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .program-meta-item strong {
+            color: var(--primary);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links li:not(:last-child):not(:nth-last-child(2)) {
+                display: none;
+            }
+
+            .page-title, .about-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .program-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Stone Soup Fresno</a>
+                <ul class="nav-links">
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="eligibility.html">Eligibility & Fees</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+                    <li><a href="#" class="btn btn-secondary">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> <span>/</span> About Us
+        </div>
+    </div>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Stone Soup Fresno</h1>
+            <p>Inspiring children and nurturing families to realize their full potential in America.</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Our Story -->
+            <div class="info-card">
+                <h2>📖 Our Story</h2>
+                <p>Stone Soup Fresno is a community benefit organization located in the heart of Fresno, California. Founded on the belief that every child deserves access to quality early education and every family deserves support, we have been serving the Fresno community for years.</p>
+                <p>Our name comes from the beloved folktale where a community comes together to share what they have, creating something wonderful from seemingly nothing. This spirit of collaboration and community support is at the heart of everything we do.</p>
+                <p>We are dedicated to providing resources, education, and support to families in our community. Through our programs, we help children develop the skills they need to succeed in school and in life, while supporting families with the tools and resources they need to thrive.</p>
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="info-card">
+                <h2>🎯 Mission & Vision</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+                    <div>
+                        <h3>Our Mission</h3>
+                        <p>To inspire children and nurture families to realize their full potential in America.</p>
+                    </div>
+                    <div>
+                        <h3>Our Vision</h3>
+                        <p>A world in which every person is respected and families have the resources they need to cultivate growth and positive change.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="info-card">
+                <h2>💚 Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3>Community</h3>
+                        <p>We believe in the power of coming together to support one another.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌱</div>
+                        <h3>Growth</h3>
+                        <p>We nurture every child's potential for learning and development.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">❤️</div>
+                        <h3>Compassion</h3>
+                        <p>We lead with empathy and understanding in all we do.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌍</div>
+                        <h3>Diversity</h3>
+                        <p>We celebrate and honor all cultures, backgrounds, and traditions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programs Details -->
+            <div id="programs">
+                <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">Our Programs</h2>
+
+                <div class="program-detail" id="preschool">
+                    <h3>🎓 Preschool Program</h3>
+                    <p>Our preschool program provides a structured, nurturing environment where children ages 3-5 develop the academic and social skills needed for kindergarten success.</p>
+                    <div class="program-meta">
+                        <div class="program-meta-item"><strong>Age:</strong> 3-5 years</div>
+                        <div class="program-meta-item"><strong>Schedule:</strong> Full & Half Day Options</div>
+                        <div class="program-meta-item"><strong>Focus:</strong> School Readiness</div>
+                    </div>
+                    <p><strong>Program Highlights:</strong></p>
+                    <ul>
+                        <li>Age-appropriate curriculum aligned with California Early Learning Standards</li>
+                        <li>Emphasis on literacy, numeracy, and social-emotional development</li>
+                        <li>Small group instruction and individualized attention</li>
+                        <li>Bilingual support available</li>
+                        <li>Healthy meals and snacks provided</li>
+                        <li>Regular progress assessments and parent conferences</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="eligibility.html" class="btn btn-outline">View Eligibility & Fees</a>
+                    </div>
+                </div>
+
+                <div class="program-detail" id="playgroup">
+                    <h3>🧸 Playgroup</h3>
+                    <p>Our playgroup provides a relaxed, play-based learning environment where children ages 2-5 engage in social interaction, creative play, and early learning through guided activities.</p>
+                    <div class="program-meta">
+                        <div class="program-meta-item"><strong>Age:</strong> 2-5 years</div>
+                        <div class="program-meta-item"><strong>Schedule:</strong> 3 Days/Week</div>
+                        <div class="program-meta-item"><strong>Focus:</strong> Social Development</div>
+                    </div>
+                    <p><strong>Program Highlights:</strong></p>
+                    <ul>
+                        <li>Play-based curriculum fostering creativity and imagination</li>
+                        <li>Social skills development through group activities</li>
+                        <li>Music, art, and movement activities</li>
+                        <li>Indoor and outdoor play spaces</li>
+                        <li>Parent involvement opportunities</li>
+                        <li>Flexible scheduling for working families</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="eligibility.html" class="btn btn-outline">View Eligibility & Fees</a>
+                    </div>
+                </div>
+
+                <div class="program-detail" id="hmong">
+                    <h3>🌏 Learn Hmong</h3>
+                    <p>Our Learn Hmong program celebrates Hmong culture and language, providing families with the opportunity to connect with their heritage while building community bonds.</p>
+                    <div class="program-meta">
+                        <div class="program-meta-item"><strong>Age:</strong> All Ages Welcome</div>
+                        <div class="program-meta-item"><strong>Schedule:</strong> Saturday Mornings</div>
+                        <div class="program-meta-item"><strong>Focus:</strong> Cultural Preservation</div>
+                    </div>
+                    <p><strong>Program Highlights:</strong></p>
+                    <ul>
+                        <li>Hmong language instruction for all skill levels</li>
+                        <li>Traditional arts, crafts, and textile work</li>
+                        <li>Cultural history and storytelling</li>
+                        <li>Intergenerational learning opportunities</li>
+                        <li>Community events and celebrations</li>
+                        <li>Open to both Hmong and non-Hmong families</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="eligibility.html" class="btn btn-outline">View Eligibility & Fees</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Impact -->
+            <div class="info-card">
+                <h2>📊 Community Impact</h2>
+                <p>Stone Soup Fresno is proud to serve our community. Here's a snapshot of our impact:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary);">100+</div>
+                        <div style="color: var(--text-light);">Families Served</div>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary);">50+</div>
+                        <div style="color: var(--text-light);">Children Enrolled</div>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary);">3</div>
+                        <div style="color: var(--text-light);">Active Programs</div>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 8px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary);">95%</div>
+                        <div style="color: var(--text-light);">Kindergarten Readiness</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <h2 style="color: var(--primary); margin-bottom: 1rem;">Want to Learn More?</h2>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">Get in touch to schedule a tour or learn more about our programs.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    <a href="eligibility.html" class="btn btn-outline">View Eligibility</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/stonesoupfresno/" target="_blank">Facebook</a>
+            </div>
+            <p>© 2026 Stone Soup Fresno. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Stone Soup Fresno</title>
+    <style>
+        :root {
+            --primary: #2c5f2d;
+            --primary-light: #4a8b4b;
+            --accent: #97bc62;
+            --text: #333333;
+            --text-light: #666666;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e0e0e0;
+            --secondary: #6c757d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .breadcrumb {
+            background: var(--bg-alt);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+            margin: 0 0.5rem;
+        }
+
+        .page-content {
+            padding: 4rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .contact-method {
+            margin-bottom: 2rem;
+        }
+
+        .contact-method h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .contact-method p {
+            color: var(--text-light);
+            margin-left: 1.75rem;
+        }
+
+        .contact-method a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-hours {
+            background: var(--bg-alt);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .contact-hours h4 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-hours ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .contact-hours li {
+            color: var(--text-light);
+            padding: 0.25rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contact-form-wrapper {
+            background: var(--bg-alt);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .contact-form-wrapper h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .required {
+            color: #dc3545;
+        }
+
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .alert-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            color: #856404;
+        }
+
+        .alert-box h3 {
+            color: #856404;
+            margin-bottom: 0.75rem;
+        }
+
+        .map-section {
+            padding: 4rem 0;
+            background: var(--bg-alt);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: #ddd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links li:not(:last-child):not(:nth-last-child(2)) {
+                display: none;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title, .contact-hero h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Stone Soup Fresno</a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="eligibility.html">Eligibility & Fees</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+                    <li><a href="#" class="btn btn-secondary">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> <span>/</span> Contact Us
+        </div>
+    </div>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Reach out with questions about enrollment, programs, donations, or anything else.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Important Notice -->
+            <div class="alert-box">
+                <h3>⚠️ Please Note</h3>
+                <p><strong>We do not accept enrollment applications through this website or by email.</strong></p>
+                <p>For enrollment inquiries, please contact us by phone or visit our facility in person to request an application packet.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+
+                    <div class="contact-method">
+                        <h4>📱 Phone</h4>
+                        <p>Main Office: (559) XXX-XXXX</p>
+                        <p>Enrollment Hotline: (559) XXX-XXXX</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h4>📧 Email</h4>
+                        <p><a href="mailto:info@stonesoupfresno.org">info@stonesoupfresno.org</a></p>
+                        <p><a href="mailto:careers@stonesoupfresno.org">Careers: careers@stonesoupfresno.org</a></p>
+                        <p><a href="mailto:donations@stonesoupfresno.org">Donations: donations@stonesoupfresno.org</a></p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h4>📍 Address</h4>
+                        <p>Stone Soup Fresno<br>[Street Address]<br>Fresno, CA 937XX</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h4>💬 Social Media</h4>
+                        <p><a href="https://www.facebook.com/stonesoupfresno/" target="_blank">Facebook: @stonesoupfresno</a></p>
+                    </div>
+
+                    <div class="contact-hours">
+                        <h4>🕒 Office Hours</h4>
+                        <ul>
+                            <li><span>Monday - Friday:</span> <span>8:00 AM - 5:00 PM</span></li>
+                            <li><span>Saturday:</span> <span>9:00 AM - 12:00 PM</span></li>
+                            <li><span>Sunday:</span> <span>Closed</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h3>Send Us a Message</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(559) XXX-XXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject <span class="required">*</span></label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic...</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="enrollment">Enrollment Information</option>
+                                <option value="programs">Program Questions</option>
+                                <option value="donation">Donations</option>
+                                <option value="volunteer">Volunteering</option>
+                                <option value="careers">Career Opportunities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </div>
+                    </form>
+                    <p class="form-note">This form is for general inquiries only. For enrollment, please call or visit our office.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 1rem;">Find Us</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 1.5rem;">Located in Fresno, California</p>
+            <div class="map-placeholder">
+                [Map Placeholder - Embed Google Maps here]
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/stonesoupfresno/" target="_blank">Facebook</a>
+            </div>
+            <p>© 2026 Stone Soup Fresno. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
