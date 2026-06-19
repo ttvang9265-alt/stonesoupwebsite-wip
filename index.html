@@ -813,6 +813,56 @@
 
         .placeholder { color: rgba(255,255,255,0.5); font-style: italic; }
 
+        /* Values Row */
+        .values-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .value-item {
+            padding: 1.5rem;
+        }
+
+        .value-item .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .value-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Contact Row */
+        .contact-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item-home h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item-home p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0;
+        }
+
         @media (max-width: 768px) {
             .footer-grid { flex-direction: column; gap: 2rem; }
 
@@ -828,6 +878,9 @@
             .two-column.image-left .text-col { order: 2; }
 
             .photo-gallery { grid-template-columns: 1fr; }
+
+            .values-row { grid-template-columns: repeat(2, 1fr); }
+            .contact-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -853,7 +906,7 @@
     </header>
 
     <!-- Hero: Full-bleed background image -->
-    <section class="home-hero" style="background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/preschool graduation pictures/Happy(343).JPG') center/cover no-repeat;">
+    <section class="home-hero" style="background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/learn hmong program/HJR_0807.JPG') center/cover no-repeat;">
         <div class="container">
             <h1>Inspiring Children, Nurturing Families</h1>
             <p class="hero-subtitle">Quality early education that prepares your child for kindergarten.</p>
