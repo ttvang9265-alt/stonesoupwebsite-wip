@@ -167,33 +167,143 @@
         }
 
         /* Hero */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 5rem 0;
+        /* Home Hero - Full-bleed image */
+        .home-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            color: white;
+            position: relative;
+            padding: 6rem 2rem;
         }
 
-        .hero h1 {
-            font-size: 2.5rem;
+        .home-hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .home-hero h1 {
+            font-size: 3rem;
+            font-weight: 400;
             margin-bottom: 1rem;
-            font-weight: 700;
+            line-height: 1.2;
         }
 
-        .hero-subtitle {
+        .home-hero .hero-subtitle {
             font-size: 1.25rem;
             margin-bottom: 2rem;
             opacity: 0.95;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.6;
         }
 
-        .hero-buttons {
+        .home-hero .hero-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+        }
+
+        .btn-hero-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-hero-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Home Sections */
+        .home-section {
+            padding: 5rem 0;
+        }
+
+        .home-section.bg-alt {
+            background: var(--bg-alt);
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .two-column .image-col img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .two-column .text-col h2 {
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .two-column .text-col p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .two-column .text-col p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid var(--border);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 0.75rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Home CTA */
+        .home-cta {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary);
         }
 
         /* Page Content */
@@ -705,6 +815,19 @@
 
         @media (max-width: 768px) {
             .footer-grid { flex-direction: column; gap: 2rem; }
+
+            .home-hero h1 { font-size: 2rem; }
+            .home-hero { min-height: 45vh; padding: 4rem 1.5rem; }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .two-column.image-left .image-col { order: 1; }
+            .two-column.image-left .text-col { order: 2; }
+
+            .photo-gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -727,8 +850,8 @@
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
+    <!-- Hero: Full-bleed background image -->
+    <section class="home-hero" style="background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/preschool graduation pictures/Happy(343).JPG') center/cover no-repeat;">
         <div class="container">
             <h1>Inspiring Children, Nurturing Families</h1>
             <p class="hero-subtitle">To inspire children and nurture families to realize their full potential in America.</p>
@@ -740,88 +863,92 @@
         </div>
     </section>
 
-    <!-- Mission -->
-    <section class="mission">
+    <!-- Mission Statement: Image left, Text right -->
+    <section class="home-section">
         <div class="container">
-            <h2>Our Vision</h2>
-            <p>A world in which every person is respected and families have the resources they need to cultivate growth and positive change.</p>
+            <div class="two-column image-left">
+                <div class="column image-col">
+                    <img src="images/preschool graduation pictures/Happy(59).JPG" alt="Happy children at Stone Soup Fresno">
+                </div>
+                <div class="column text-col">
+                    <h2>Mission Statement</h2>
+                    <p>Founded on the belief that every child deserves access to quality early education and every family deserves support, Stone Soup Fresno has been serving the Fresno community for years.</p>
+                    <p>Our name comes from the beloved folktale where a community comes together to share what they have, creating something wonderful from seemingly nothing. This spirit of collaboration and community support is at the heart of everything we do.</p>
+                    <p>Our goal is to set your child up for educational success &mdash; for the rest of their life.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Programs -->
-    <section class="programs" id="programs">
+    <!-- The Stone Soup Experience: Text left, Image right -->
+    <section class="home-section bg-alt">
         <div class="container">
-            <h2 class="section-title">Our Programs</h2>
+            <div class="two-column text-left">
+                <div class="column text-col">
+                    <h2>The Stone Soup Experience</h2>
+                    <p><strong>Warm welcomes and open doors.</strong> Whether your child is enrolled in our playgroup or early learning programs, you can expect to see a friendly teacher&rsquo;s face at drop off and pick up every day, without fail. Our staff members are fully engaged and strive to create a dialogue of open, ongoing communication through daily chats, orientations and events, regular texts, phone calls, and emails.</p>
+                    <p><strong>Opportunities to engage and fun events.</strong> As a Stone Soup family, you will have the opportunity to engage with your community throughout the year with a variety of events. We host parent orientations, family fun days, and cultural celebrations that bring our diverse community together.</p>
+                    <p><strong>Building strong communities.</strong> Sharing our gifts and talents to build a better community is at the core of our mission. We develop successful partnerships with local schools, organizations, and community leaders to deliver high quality education and support services.</p>
+                </div>
+                <div class="column image-col">
+                    <img src="images/learn hmong program/HJR_0807.JPG" alt="Children learning together">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Preview -->
+    <section class="home-section">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 3rem;">Our Programs</h2>
             <div class="program-grid">
                 <div class="program-card">
-                    <div class="program-icon">🎓</div>
+                    <div class="program-icon">&#x1F393;</div>
                     <h3>Preschool</h3>
                     <p>Quality early education preparing your child for kindergarten success. Ages 3-5 welcome.</p>
-                    <a href="about.html#preschool" class="program-link">Learn More →</a>
+                    <a href="about.html#preschool" class="program-link">Learn More &rarr;</a>
                 </div>
                 <div class="program-card">
-                    <div class="program-icon">🧸</div>
+                    <div class="program-icon">&#x1F9F8;</div>
                     <h3>Playgroup</h3>
-                    <p>Interactive play-based learning experiences that foster social and cognitive development.</p>
-                    <a href="about.html#playgroup" class="program-link">Learn More →</a>
+                    <p>Interactive play-based learning experiences that foster social and cognitive development. Ages 0-5.</p>
+                    <a href="about.html#playgroup" class="program-link">Learn More &rarr;</a>
                 </div>
                 <div class="program-card">
-                    <div class="program-icon">🌏</div>
+                    <div class="program-icon">&#x1F30F;</div>
                     <h3>Learn Hmong</h3>
                     <p>Cultural and language programs celebrating Hmong heritage and building community connections.</p>
-                    <a href="about.html#hmong" class="program-link">Learn More →</a>
+                    <a href="about.html#hmong" class="program-link">Learn More &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Preview -->
-    <section class="about">
+    <!-- Community Photo Gallery -->
+    <section class="home-section bg-alt">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Stone Soup Fresno</h2>
-                    <p>Stone Soup Fresno is a community benefit organization located in Fresno, CA. We are dedicated to providing resources, education, and support to families in our community.</p>
-                    <p>Through our preschool, playgroup, and cultural programs, we help children and families realize their full potential. Our programs are designed to nurture growth, celebrate diversity, and build strong community bonds.</p>
-                    <a href="about.html" class="btn btn-outline">Read Our Full Story →</a>
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 3rem;">Our Community</h2>
+            <div class="photo-gallery">
+                <div class="gallery-item">
+                    <img src="images/cookies with cops event/LEA_3871.JPG" alt="Cookies with Cops community event">
+                    <p class="gallery-caption">Cookies with Cops community event</p>
                 </div>
-                <div class="about-image">
-                    [Community Image]
+                <div class="gallery-item">
+                    <img src="images/scholarship award event/Awards(166).JPG" alt="Scholarship awards celebration">
+                    <p class="gallery-caption">Scholarship Awards Celebration</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
-            <p class="testimonial-text">"Stone Soup Fresno has been an incredible resource for our family. The preschool program prepared our child so well for kindergarten, and the community support has been amazing."</p>
-            <p class="testimonial-author">— Community Member</p>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Feel free to reach out regarding eligibility, enrollment, or any questions you have.</p>
-            <div class="contact-info-main">
-                <div class="contact-item-main">
-                    <h3>Facebook</h3>
-                    <p><a href="https://www.facebook.com/stonesoupfresno/" target="_blank">@stonesoupfresno</a></p>
-                </div>
-                <div class="contact-item-main">
-                    <h3>Location</h3>
-                    <p>Fresno, California</p>
-                </div>
-                <div class="contact-item-main">
-                    <h3>Programs</h3>
-                    <p>Preschool | Playgroup | Learn Hmong</p>
-                </div>
-            </div>
-            <div style="margin-top: 2rem;">
-                <a href="contact.html" class="btn btn-white">Send Us a Message</a>
+    <!-- Contact CTA -->
+    <section class="home-cta">
+        <div class="container" style="text-align: center; padding: 4rem 0;">
+            <h2 style="margin-bottom: 1rem;">Contact Us</h2>
+            <p style="margin-bottom: 1.5rem; opacity: 0.95;">Feel free to reach out regarding eligibility, enrollment, or any questions you have.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-white">Contact Us</a>
+                <a href="eligibility.html" class="btn btn-outline-light">View Eligibility</a>
             </div>
         </div>
     </section>
