@@ -181,23 +181,147 @@
             margin-bottom: 3rem;
         }
 
+        /* About Hero - Full-bleed image with overlay */
         .about-hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 4rem 0;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            color: white;
+            position: relative;
+            padding: 6rem 2rem;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 1;
+        }
+
+        .about-hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
 
         .about-hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            font-weight: 400;
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
         .about-hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
+            font-size: 1.25rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        /* About Section styles */
+        .about-section {
+            padding: 4rem 0;
+        }
+
+        .about-section.bg-alt {
+            background: var(--bg-alt);
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .two-column .image-col img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .two-column .text-col h2 {
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .two-column .text-col p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .two-column .text-col p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 0.75rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* CTA Section on about page */
+        .about-cta {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            border: 2px solid white;
+        }
+
+        .btn-white:hover {
+            background: transparent;
+            color: white;
         }
 
         .info-card {
@@ -337,6 +461,27 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .two-column.image-left .image-col { order: 1; }
+            .two-column.image-left .text-col { order: 2; }
+
+            .about-hero {
+                min-height: 40vh;
+                padding: 4rem 1.5rem;
+            }
+
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
         }
         /* Footer */
         .site-footer {
@@ -472,157 +617,172 @@
         </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="index.html">Home</a> <span>/</span> About Us
-        </div>
-    </div>
-
-    <!-- About Hero -->
-    <section class="about-hero">
+    <!-- About Hero: Large image banner with text overlay -->
+    <section class="about-hero" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/preschool graduation pictures/Happy(343).JPG') center/cover no-repeat;">
         <div class="container">
             <h1>About Stone Soup Fresno</h1>
             <p>Inspiring children and nurturing families to realize their full potential in America.</p>
         </div>
     </section>
 
-    <!-- Content -->
-    <section class="page-content">
+    <!-- Mission Statement: Image left, Text right -->
+    <section class="about-section">
         <div class="container">
-            <!-- Our Story -->
-            <div class="info-card">
-                <h2>📖 Our Story</h2>
-                <p>Stone Soup Fresno is a community benefit organization located in the heart of Fresno, California. Founded on the belief that every child deserves access to quality early education and every family deserves support, we have been serving the Fresno community for years.</p>
-                <p>Our name comes from the beloved folktale where a community comes together to share what they have, creating something wonderful from seemingly nothing. This spirit of collaboration and community support is at the heart of everything we do.</p>
-                <p>We are dedicated to providing resources, education, and support to families in our community. Through our programs, we help children develop the skills they need to succeed in school and in life, while supporting families with the tools and resources they need to thrive.</p>
-            </div>
-
-            <!-- Mission & Vision -->
-            <div class="info-card">
-                <h2>🎯 Mission & Vision</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
-                    <div>
-                        <h3>Our Mission</h3>
-                        <p>To inspire children and nurture families to realize their full potential in America.</p>
-                    </div>
-                    <div>
-                        <h3>Our Vision</h3>
-                        <p>A world in which every person is respected and families have the resources they need to cultivate growth and positive change.</p>
-                    </div>
+            <div class="two-column image-left">
+                <div class="column image-col">
+                    <img src="images/preschool graduation pictures/Happy(59).JPG" alt="Happy children at Stone Soup Fresno">
+                </div>
+                <div class="column text-col">
+                    <h2>Mission Statement</h2>
+                    <p>Founded on the belief that every child deserves access to quality early education and every family deserves support, Stone Soup Fresno has been serving the Fresno community for years.</p>
+                    <p>Our name comes from the beloved folktale where a community comes together to share what they have, creating something wonderful from seemingly nothing. This spirit of collaboration and community support is at the heart of everything we do.</p>
+                    <p>Our goal is to set your child up for educational success &mdash; for the rest of their life.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Core Values -->
-            <div class="info-card">
-                <h2>💚 Core Values</h2>
-                <div class="values-grid">
-                    <div class="value-card">
-                        <div class="value-icon">🤝</div>
-                        <h3>Community</h3>
-                        <p>We believe in the power of coming together to support one another.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">🌱</div>
-                        <h3>Growth</h3>
-                        <p>We nurture every child's potential for learning and development.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">❤️</div>
-                        <h3>Compassion</h3>
-                        <p>We lead with empathy and understanding in all we do.</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">🌍</div>
-                        <h3>Diversity</h3>
-                        <p>We celebrate and honor all cultures, backgrounds, and traditions.</p>
-                    </div>
+    <!-- Stone Soup Experience: Text left, Image right -->
+    <section class="about-section bg-alt">
+        <div class="container">
+            <div class="two-column text-left">
+                <div class="column text-col">
+                    <h2>The Stone Soup Experience</h2>
+                    <p><strong>Warm welcomes and open doors.</strong> Whether your child is enrolled in our playgroup or early learning programs, you can expect to see a friendly teacher&rsquo;s face at drop off and pick up every day, without fail. Our staff members are fully engaged and strive to create a dialogue of open, ongoing communication through daily chats, orientations and events, regular texts, phone calls, and emails.</p>
+                    <p><strong>Opportunities to engage and fun events.</strong> As a Stone Soup family, you will have the opportunity to engage with your community throughout the year with a variety of events. We host parent orientations, family fun days, and cultural celebrations that bring our diverse community together.</p>
+                    <p><strong>Building strong communities.</strong> Sharing our gifts and talents to build a better community is at the core of our mission. We develop successful partnerships with local schools, organizations, and community leaders to deliver high quality education and support services.</p>
+                </div>
+                <div class="column image-col">
+                    <img src="images/learn hmong program/HJR_0807.JPG" alt="Children learning together">
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Programs Details -->
-            <div id="programs">
-                <h2 style="text-align: center; color: var(--primary); margin: 3rem 0 2rem;">Our Programs</h2>
-
-                <div class="program-detail" id="preschool">
-                    <h3>🎓 Preschool Program</h3>
-                    <p>Our preschool program provides a structured, nurturing environment where children ages 3-5 develop the academic and social skills needed for kindergarten success.</p>
-                    <div class="program-meta">
-                        <div class="program-meta-item"><strong>Age:</strong> 3-5 years</div>
-                        <div class="program-meta-item"><strong>Schedule:</strong> Full & Half Day Options</div>
-                        <div class="program-meta-item"><strong>Focus:</strong> School Readiness</div>
-                    </div>
-                    <p><strong>Program Highlights:</strong></p>
-                    <ul>
-                        <li>Age-appropriate curriculum aligned with California Early Learning Standards</li>
-                        <li>Emphasis on literacy, numeracy, and social-emotional development</li>
-                        <li>Small group instruction and individualized attention</li>
-                        <li>Bilingual support available</li>
-                        <li>Healthy meals and snacks provided</li>
-                        <li>Regular progress assessments and parent conferences</li>
-                    </ul>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="eligibility.html" class="btn btn-outline">View Eligibility & Fees</a>
-                    </div>
+    <!-- Core Values -->
+    <section class="about-section">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">&#x1F 🤝</div>
+                    <h3>Community</h3>
+                    <p>We believe in the power of coming together to support one another.</p>
                 </div>
-
-                                <div class="program-detail" id="playgroup">
-                    <h3>&#x1F9F8; Playgroup</h3>
-                    <p>Playgroup is an enrichment program for parents/caring adults of children ages 0-5. Through teacher-led academic engagement, parent and child learn through play, participate in parent education sessions, and receive supportive services that are designed for families to strengthen social-emotional development, enhance school readiness skills, and build bonds between children and their families.</p>
-                    <div class="program-meta">
-                        <div class="program-meta-item"><strong>Age:</strong> 0-5 years</div>
-                        <div class="program-meta-item"><strong>Schedule:</strong> Mon &amp; Wed or Tue &amp; Thu</div>
-                        <div class="program-meta-item"><strong>Focus:</strong> Social-Emotional Development</div>
-                    </div>
-                    <p><strong>What to Expect:</strong></p>
-                    <ul>
-                        <li>Children ages 0-5</li>
-                        <li>1 parent or caregiver accompanies child to 1.5 hour class sessions</li>
-                        <li>Creative classroom environment: Learning stations + indoor playroom</li>
-                        <li>Choose cohort on Monday &amp; Wednesday, or Tuesday &amp; Thursday</li>
-                    </ul>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="eligibility.html" class="btn btn-outline">View Eligibility &amp; Fees</a>
-                    </div>
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Growth</h3>
+                    <p>We nurture every child&rsquo;s potential for learning and development.</p>
                 </div>
+                <div class="value-card">
+                    <div class="value-icon">❤️</div>
+                    <h3>Compassion</h3>
+                    <p>We lead with empathy and understanding in all we do.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Diversity</h3>
+                    <p>We celebrate and honor all cultures, backgrounds, and traditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="program-detail" id="hmong">
-                    <h3>🌏 Learn Hmong</h3>
-                    <p>Our Learn Hmong program celebrates Hmong culture and language, providing families with the opportunity to connect with their heritage while building community bonds.</p>
-                    <div class="program-meta">
-                        <div class="program-meta-item"><strong>Age:</strong> All Ages Welcome</div>
-                        <div class="program-meta-item"><strong>Schedule:</strong> Monday to Wednesday</div>
-                        <div class="program-meta-item"><strong>Focus:</strong> Cultural Preservation</div>
-                    </div>
-                    <p><strong>Program Highlights:</strong></p>
-                    <ul>
-                        <li>Hmong language instruction for all skill levels</li>
-                        <li>Traditional arts, crafts, and textile work</li>
-                        <li>Cultural history and storytelling</li>
-                        <li>Intergenerational learning opportunities</li>
-                        <li>Community events and celebrations</li>
-                        <li>Open to both Hmong and non-Hmong families</li>
-                    </ul>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="eligibility.html" class="btn btn-outline">View Eligibility & Fees</a>
-                    </div>
+    <!-- Programs Summary -->
+    <section class="about-section bg-alt">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Our Programs</h2>
+            <div class="program-detail" id="preschool">
+                <h3>🎓 Preschool Program</h3>
+                <p>Our preschool program provides a structured, nurturing environment where children ages 3-5 develop the academic and social skills needed for kindergarten success.</p>
+                <div class="program-meta">
+                    <div class="program-meta-item"><strong>Age:</strong> 3-5 years</div>
+                    <div class="program-meta-item"><strong>Schedule:</strong> Full &amp; Half Day Options</div>
+                    <div class="program-meta-item"><strong>Focus:</strong> School Readiness</div>
+                </div>
+                <p><strong>Program Highlights:</strong></p>
+                <ul>
+                    <li>Age-appropriate curriculum aligned with California Early Learning Standards</li>
+                    <li>Emphasis on literacy, numeracy, and social-emotional development</li>
+                    <li>Small group instruction and individualized attention</li>
+                    <li>Bilingual support available</li>
+                    <li>Healthy meals and snacks provided</li>
+                </ul>
+                <div style="margin-top: 1.5rem;">
+                    <a href="eligibility.html" class="btn btn-outline">View Eligibility &amp; Fees</a>
                 </div>
             </div>
 
-            <!-- Community Impact -->
-            <div class="info-card">
-                <h2>📊 Our Community</h2>
-                <p>Stone Soup Fresno proudly serves the Fresno community. We are dedicated to providing quality early education and family support services. Our programs are designed to meet the unique needs of our community and celebrate the diversity of the families we serve.</p>
+            <div class="program-detail" id="playgroup">
+                <h3>&#x1F9F8; Playgroup</h3>
+                <p>Playgroup is an enrichment program for parents/caring adults of children ages 0-5. Through teacher-led academic engagement, parent and child learn through play, participate in parent education sessions, and receive supportive services that are designed for families to strengthen social-emotional development, enhance school readiness skills, and build bonds between children and their families.</p>
+                <div class="program-meta">
+                    <div class="program-meta-item"><strong>Age:</strong> 0-5 years</div>
+                    <div class="program-meta-item"><strong>Schedule:</strong> Mon &amp; Wed or Tue &amp; Thu</div>
+                    <div class="program-meta-item"><strong>Focus:</strong> Social-Emotional Development</div>
+                </div>
+                <p><strong>What to Expect:</strong></p>
+                <ul>
+                    <li>Children ages 0-5</li>
+                    <li>1 parent or caregiver accompanies child to 1.5 hour class sessions</li>
+                    <li>Creative classroom environment: Learning stations + indoor playroom</li>
+                    <li>Choose cohort on Monday &amp; Wednesday, or Tuesday &amp; Thursday</li>
+                </ul>
+                <div style="margin-top: 1.5rem;">
+                    <a href="eligibility.html" class="btn btn-outline">View Eligibility &amp; Fees</a>
+                </div>
             </div>
 
-            <!-- CTA -->
-            <div style="text-align: center; margin-top: 3rem;">
-                <h2 style="color: var(--primary); margin-bottom: 1rem;">Want to Learn More?</h2>
-                <p style="color: var(--text-light); margin-bottom: 1.5rem;">Get in touch to schedule a tour or learn more about our programs.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                    <a href="eligibility.html" class="btn btn-outline">View Eligibility</a>
+            <div class="program-detail" id="hmong">
+                <h3>🌏 Learn Hmong</h3>
+                <p>Our Learn Hmong program celebrates Hmong culture and language, providing families with the opportunity to connect with their heritage while building community bonds.</p>
+                <div class="program-meta">
+                    <div class="program-meta-item"><strong>Age:</strong> All Ages Welcome</div>
+                    <div class="program-meta-item"><strong>Schedule:</strong> Monday to Wednesday</div>
+                    <div class="program-meta-item"><strong>Focus:</strong> Cultural Preservation</div>
                 </div>
+                <p><strong>Program Highlights:</strong></p>
+                <ul>
+                    <li>Hmong language instruction for all skill levels</li>
+                    <li>Traditional arts, crafts, and textile work</li>
+                    <li>Cultural history and storytelling</li>
+                    <li>Intergenerational learning opportunities</li>
+                    <li>Community events and celebrations</li>
+                    <li>Open to both Hmong and non-Hmong families</li>
+                </ul>
+                <div style="margin-top: 1.5rem;">
+                    <a href="eligibility.html" class="btn btn-outline">View Eligibility &amp; Fees</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Impact / Photo Gallery -->
+    <section class="about-section">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Our Community</h2>
+            <div class="photo-gallery">
+                <div class="gallery-item">
+                    <img src="images/cookies with cops event/LEA_3871.JPG" alt="Cookies with Cops community event">
+                    <p class="gallery-caption">Cookies with Cops community event</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/scholarship award event/Awards(166).JPG" alt="Scholarship awards celebration">
+                    <p class="gallery-caption">Scholarship Awards Celebration</p>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-light); margin-top: 2rem;">Stone Soup Fresno proudly serves the Fresno community through education, cultural programs, and community partnership.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+        <div class="container" style="text-align: center; padding: 3rem 0;">
+            <h2 style="margin-bottom: 1rem;">Want to Learn More?</h2>
+            <p style="margin-bottom: 1.5rem; opacity: 0.9;">Get in touch to schedule a tour or learn more about our programs.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-white">Contact Us</a>
+                <a href="eligibility.html" class="btn btn-outline-light">View Eligibility</a>
             </div>
         </div>
     </section>
