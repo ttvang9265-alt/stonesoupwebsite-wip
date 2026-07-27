@@ -436,6 +436,27 @@
             .nav-links { display: none; }
             .footer-grid { flex-direction: column; gap: 2rem; }
         }
+    
+        /* Fluid image scaling */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .column.image-col img,
+        .hero-bg img,
+        section img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .home-hero {
+                min-height: 40vh;
+                padding: 4rem 1rem;
+            }
+        }
+
     </style>
 </head>
 <body>
